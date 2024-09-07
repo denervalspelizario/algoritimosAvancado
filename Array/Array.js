@@ -21,6 +21,13 @@ console.log(my_array.length)
 
 my_array2 = [1,7,2,88,10,3,25,34,5]
 
+
+// descobrindo posicao de um elemento especifico
+const position = my_array2.indexOf(2);
+
+console.log("Posição do item de valor 2 usando o indexOf")
+console.log(position); // Saída: 2
+
 console.log('ordenando elementos')
 // o javascript por padrão, converte os elementos do array em strings e 
 //os ordena em ordem lexicográfica (alfabética) então precisa fazer
@@ -98,7 +105,7 @@ console.log(b)
 
 
 A = [1,2,3]
-B = A.slice()
+B = A.slice() // dessa maneira ao alterar o a ou b não muda a outra array
 // adicionei 999 na posicao 0 de b
 B[0] = 999
 console.log("Ao passar 999 na posicao 0 de B e não alterou o array A como anteriormente")
@@ -108,12 +115,12 @@ console.log(B)
 
 // alterando valor de array de uma posição para outra posicao 1 para 2 e vice e versa
 console.log("alterando valor de array de uma posição para outra")
-let mp = [1, 2, 3, 4];
+let mp = [1, 2, 3, 4]; // criando array
 console.log(mp);
 
 // Usando uma variável temporária para trocar os valores
-let temp = mp[1];
+let temp = mp[1]; // criando variavel temporarias
 let temp2 = mp[2];
-mp[2] = temp;
+mp[2] = temp; // mudando valor do array com essas variaveis
 mp[1] = temp2;
 console.log(mp);
