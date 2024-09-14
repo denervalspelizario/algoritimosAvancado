@@ -23,12 +23,18 @@ Sample Output : 31
 let sum = 0;
 let arrayQueSeraSomado = [1,2,3,4,10,11]
 
-
-for(let i = 0; i < arrayQueSeraSomado.length; i++)
+function simpleArraySum(array)
 {
-  sum = sum + arrayQueSeraSomado[i]
+  for(let i = 0; i < array.length; i++)
+    {
+      sum = sum + arrayQueSeraSomado[i]
+    }
+
+  return sum
 }
 
-console.log(sum)
+
+
+console.log(simpleArraySum(arrayQueSeraSomado))
 
 // Resposta instrutor
