@@ -44,38 +44,55 @@ resolução ( 11 + 5 + (-12) )  +  ( 4 + 5 + 10 ) = 4 - 19 = 15
 */
 
 
-array01 = [11,2,4]
-array02 = [4,5,6]
-array03 = [10,8,-12]
+array01 = [
+  [1,2,3],
+  [4,5,6],
+  [7,8,9]
+]
+
+array02 = [
+  [11,2,4],
+  [4,5,6],
+  [10,8,-12]
+]
+ 
 
 
-function diagonalDifference(array01, array02, array03){
+function diagonalDifference(array01){
 
   sum01 = 0;
   sum02 = 0;
-  sumTotal = 0;
+  diferencaTotal = 0;
 
-
-  // são todos tamanhos iguais?
-  if(array01.length === array02.length && array02.length === array03.length)
-  {
       for (let index = 0; index < array01.length; index++) {
         
+        // pegando posicao valor  11 , 5, -12 
+        sum01 = sum01 + array01[index][index]       
+        
+        // pegando posicao valor  4 , 5, 10 
+        sum02 = sum02 + array01[index][array01.length - 1 - index]
+       
+        // fazendo a difereça do valor
+        diferencaTotal = sum01 - sum02
 
-        sum01 = sum01 + array01[index]
-        sum01 = sum01 + array02[index + 1]
-        sum01 = sum01 + array03[index + 2]
-
-        sum02 = sum02 + array01[index + 2]
-        sum02 = sum02 + array02[index + 1]
-        sum02 = sum02 + array03[index]
-
-        sumTotal = sum01 - sum02
-        return sumTotal
         
       }
-  }
+
+      // tranformando a resposta em valor absoluto
+      valorAbsoluto = 0;
+      if(diferencaTotal < 0)
+      {
+        valorAbsoluto = Math.abs(diferencaTotal)
+        
+        return valorAbsoluto
+      } else {
+        
+        // se for positivo retorna o valor normalmente
+        return diferencaTotal
+      
+      }
 
 }
 
-console.log(diagonalDifference(array01, array02, array03))
+console.log(diagonalDifference(array01))
+console.log(diagonalDifference(array02))
